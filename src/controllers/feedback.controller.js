@@ -3,10 +3,10 @@ import { Feedback } from "../models/feedback.model.js";
 
 //Create a feedback
 const createFeedback = asyncHandler(async (req, res) => {
-  const { username, email, feedbackText, category } = req.body;
+  const { username, email, message, category } = req.body;
 
   if (
-    [username, email, feedbackText, category].some(
+    [username, email, message, category].some(
       (field) => field?.trim() === ""
     )
   ) {
@@ -16,7 +16,7 @@ const createFeedback = asyncHandler(async (req, res) => {
   const newFeedback = await Feedback.create({
     username,
     email,
-    feedbackText,
+    message,
     category,
   });
 

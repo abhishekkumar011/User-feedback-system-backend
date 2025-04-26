@@ -4,7 +4,7 @@ const feedbackSchema = new Schema(
   {
     username: { type: String, required: true },
     email: { type: String, required: true },
-    feedbackText: { type: String, required: true },
+    message: { type: String, required: true },
     category: {
       type: String,
       enum: ["suggestion", "bug", "feature"],
